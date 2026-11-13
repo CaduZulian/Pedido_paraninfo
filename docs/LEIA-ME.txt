@@ -1,0 +1,44 @@
+PARANINFO.EXE - CONVITE DA TURMA
+
+1. Extraia a pasta inteira do ZIP.
+2. Esta distribuição usa informações genéricas para demonstração.
+   Para personalizar, feche o programa, edite config.json e salve em UTF-8.
+   Substitua professor, disciplina, turma, instituicao e ano.
+3. Abra Paraninfo.exe. Não precisa instalar .NET nem usar administrador.
+
+CONTROLES
+ESC ou Alt+F4: sair em qualquer momento.
+F2: pular direto para o convite.
+M: ligar/desligar áudio.
+Tab / Shift+Tab: selecionar botões. Enter ou Espaço: confirmar.
+
+O convite aparece em aproximadamente 35 segundos. Não há prazo para responder.
+O NÃO foge até três vezes e depois para. Pelo teclado ele não foge.
+O SIM inicia seis segundos de comemoração; o agradecimento fica até sair.
+Recusar é possível e termina com um som curto de fracasso e um agradecimento.
+
+ENSAIO
+Paraninfo.exe --windowed
+Paraninfo.exe --windowed --skip
+Paraninfo.exe --presentation
+
+CONFIGURAÇÕES ÚTEIS
+audio.volume: 0 a 1 (padrão 0.2).
+audio.enabled: false para começar sem som.
+tentativasNao: 0 para o NÃO ficar parado.
+visual.reducedMotion: true para reduzir animações e desativar a fuga.
+visual.terminalFont: VT323 usa a fonte retrô incluída, sem instalação.
+visual.crtEnabled: false desliga brilho, linhas de varredura e vinheta do terminal.
+visual.crtScanlineOpacity / crtGlow: ajustam as intensidades do acabamento CRT.
+visual.particleCount / particleColor / particleSpeed: personalizam os confetes.
+duracao: tempos em milissegundos; as primeiras etapas somam 35000 por padrão.
+mensagens: pergunta, roteiros, alertas e agradecimentos personalizáveis.
+
+Arquivo ausente ou inválido utiliza valores padrão. Edite o config.json da mesma
+pasta que o executável; alterações são lidas na próxima abertura.
+
+Funciona offline. A simulação acontece somente nesta janela. O programa não
+altera configurações do Windows, não bloqueia atalhos e não controla outros apps.
+
+Antes da homenagem, ensaie no computador e no projetor que serão utilizados,
+conferindo nomes, legibilidade, volume, duração, ESC e F2.

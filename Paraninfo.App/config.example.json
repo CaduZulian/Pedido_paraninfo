@@ -1,0 +1,82 @@
+{
+  "professor": "Convidado",
+  "disciplina": "Disciplina de Exemplo",
+  "turma": "Turma de Formandos",
+  "instituicao": "Instituição de Ensino",
+  "ano": 2026,
+  "telaCheia": true,
+  "tentativasNao": 3,
+  "audio": {
+    "enabled": true,
+    "volume": 0.2
+  },
+  "visual": {
+    "terminalFont": "VT323",
+    "crtEnabled": true,
+    "crtScanlineOpacity": 0.1,
+    "crtGlow": 0.25,
+    "reducedMotion": false,
+    "particleCount": 100,
+    "particleColor": "#70FFAA",
+    "particleSpeed": 1
+  },
+  "duracao": {
+    "boot": 8000,
+    "anomaly": 12000,
+    "collapse": 15000,
+    "celebration": 6000
+  },
+  "mensagens": {
+    "boot": "Initializing academic system...",
+    "anomaly": "ERROR 404: PARANINFO NOT FOUND",
+    "invitation": "Professor, aceita ser nosso paraninfo?",
+    "success": "PARANINFO INSTALLED SUCCESSFULLY!",
+    "thanks": "Obrigado por fazer parte da nossa jornada!",
+    "declined": "Tudo bem, professor. Nosso agradecimento continua!",
+    "collapseTitle": "CRITICAL SYSTEM REQUIREMENT",
+    "collapseMessage": "One final component is missing.",
+    "invitationHint": "Sem pressa. A turma esperou por este momento.",
+    "noHints": [
+      "Confirma essa escolha?",
+      "Vamos tentar novamente?",
+      "Ainda dá tempo de aceitar.",
+      "O convite continua aberto.",
+      "A turma ficará feliz com sua presença.",
+      "A decisão é sua."
+    ],
+    "bootLines": [
+      "{boot}",
+      "Loading academic modules...",
+      "Institution: {instituicao}",
+      "Module: {disciplina}",
+      "Checking graduation status...",
+      "[OK] Knowledge",
+      "[OK] Experience",
+      "[OK] Teamwork",
+      "[OK] Graduation requirements",
+      "USER: {turma} / {ano}",
+      "SYSTEM READY."
+    ],
+    "anomalyLines": [
+      "WARNING: Unexpected request detected.",
+      "Searching for missing component...",
+      "{anomaly}",
+      "Attempting to resolve...",
+      "Dependency resolver: retry 01 / 03",
+      "Academic protocol interrupted.",
+      "Waiting for manual intervention..."
+    ],
+    "collapseLines": [
+      "CRITICAL SYSTEM REQUIREMENT",
+      "One final component is missing.",
+      "Automatic recovery unavailable.",
+      "Switching to human protocol...",
+      "Professor {professor}"
+    ],
+    "alertLines": [
+      "{anomaly}",
+      "Dependency resolver unavailable.",
+      "Manual confirmation required."
+    ]
+  }
+}

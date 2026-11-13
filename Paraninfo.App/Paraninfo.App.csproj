@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Paraninfo.App</RootNamespace>
+    <AssemblyName>Paraninfo</AssemblyName>
+    <Version>1.1.0</Version>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!-- Compilações públicas nunca selecionam a configuração pessoal automaticamente. -->
+    <UsePrivateConfig Condition="'$(UsePrivateConfig)' == ''">false</UsePrivateConfig>
+    <PresentationConfig Condition="'$(UsePrivateConfig)' == 'true'">config.json</PresentationConfig>
+    <PresentationConfig Condition="'$(UsePrivateConfig)' != 'true'">config.example.json</PresentationConfig>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="config.json;config.example.json"/>
+    <Content Include="$(PresentationConfig)" Link="config.json" TargetPath="config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+    <Resource Include="Assets\Sounds\*.wav" />
+    <Resource Include="Assets\Fonts\*.ttf" />
+    <None Update="Assets\Fonts\OFL-VT323.txt" CopyToPublishDirectory="PreserveNewest" TargetPath="Licenses\VT323-OFL.txt"/>
+    <None Include="..\docs\LEIA-ME.txt" Link="LEIA-ME.txt" CopyToPublishDirectory="PreserveNewest"/>
+  </ItemGroup>
+  <Target Name="ValidatePrivateConfiguration" BeforeTargets="PrepareForBuild"
+          Condition="'$(UsePrivateConfig)' == 'true' and !Exists('$(MSBuildProjectDirectory)\config.json')">
+    <Error Text="Configuração pessoal ausente. Copie config.example.json para config.json antes de usar UsePrivateConfig=true."/>
+  </Target>
+</Project>

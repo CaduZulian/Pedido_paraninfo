@@ -1,0 +1,38 @@
+<UserControl x:Class="Paraninfo.App.Views.InvitationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="Grayscale">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="220"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="&gt; AWAITING HUMAN CONFIRMATION" FontSize="26" TextAlignment="Left"
+                   Foreground="{StaticResource MutedGreenBrush}" Margin="0,8,0,22"/>
+        <Viewbox Grid.Row="1" Stretch="Uniform" StretchDirection="DownOnly" HorizontalAlignment="Center">
+            <StackPanel Width="1120">
+                <TextBlock x:Name="Professor" FontSize="34" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,18"/>
+                <TextBlock x:Name="Question" FontSize="48" TextAlignment="Center"
+                           TextWrapping="Wrap" Foreground="{StaticResource TerminalGreenBrush}"/>
+                <TextBlock x:Name="ClassLabel" FontSize="25" TextAlignment="Center" TextWrapping="Wrap"
+                           Foreground="{StaticResource MutedGreenBrush}" Margin="0,22,0,0"/>
+            </StackPanel>
+        </Viewbox>
+        <Canvas x:Name="ButtonArea" Grid.Row="2" Background="Transparent" SizeChanged="Area_SizeChanged">
+            <Button x:Name="Yes" Style="{StaticResource ActionButton}" Width="240" Height="70"
+                    Click="Yes_Click" TabIndex="0" AutomationProperties.Name="Sim, aceito ser paraninfo">
+                <!-- Cor local impede que o estilo global verde do TextBlock substitua o texto escuro do botão. -->
+                <TextBlock Text="SIM, ACEITO" Foreground="{StaticResource BackgroundBrush}"
+                           FontFamily="{DynamicResource TerminalFontFamily}" FontSize="30"/>
+            </Button>
+            <Button x:Name="No" Style="{StaticResource ActionButton}" Content="NÃO" Width="150" Height="70"
+                    Background="{StaticResource PanelBrush}" Foreground="{StaticResource TerminalGreenBrush}"
+                    BorderBrush="#527261" MouseEnter="No_MouseEnter" Click="No_Click" TabIndex="1"
+                    AutomationProperties.Name="Não, recusar convite"/>
+        </Canvas>
+        <TextBlock x:Name="Hint" Grid.Row="3" FontSize="26" TextAlignment="Center" TextWrapping="Wrap"
+                   Foreground="{StaticResource MutedGreenBrush}" Margin="0,10,0,16"/>
+    </Grid>
+</UserControl>
