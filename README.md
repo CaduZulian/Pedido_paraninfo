@@ -103,8 +103,8 @@ Para usar uma publicação portátil, basta Windows x64; não é necessário ins
 
 ```powershell
 # Clone este repositório e acesse a pasta do projeto.
-git clone <URL_DO_REPOSITORIO>
-cd <PASTA_DO_REPOSITORIO>
+git clone https://github.com/CaduZulian/Pedido_paraninfo.git
+cd Pedido_paraninfo
 
 # Restaure as dependências e execute com a configuração pública genérica.
 dotnet restore .\Paraninfo.sln
